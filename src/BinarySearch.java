@@ -1,4 +1,4 @@
-public class BinarySearch {
+class BinarySearch {
     // The array which we will search on it must be sorted!!
     //Time Complexity is O(log2(N))
 
@@ -40,5 +40,16 @@ public class BinarySearch {
         return 0;
 
 
+    }
+
+    public static void main(String[] args) {
+        int[] list = new int[]{2, 5, 9, 10, 21, 92, 100};
+
+        //Binary Search objects and Searching methods
+        BinarySearch binarySearch = new BinarySearch();
+        //BinarySearch by Recursive
+        binarySearch.searchByRecursive(list, 0, list.length - 1, 11); // exists
+        //BinarySearch by Iterative
+        binarySearch.searchByIterativeAlgorithm(list, 0, list.length - 1, 12);//d.n.e.
     }
 }
