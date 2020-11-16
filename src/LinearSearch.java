@@ -1,8 +1,8 @@
 public class LinearSearch {
 
-    public int searchByIterativeAlgorithm(int [] list , int key , int start,int lenght){
+    public int searchByIterativeAlgorithm(int [] list , int key , int start){
 
-        while (start<lenght){
+        while (start<list.length){
 
             if (list[start] == key){
                 System.out.println("The element exists in your array " + start + "th index");
@@ -40,7 +40,7 @@ public class LinearSearch {
     public static void main(String[] args) {
         int [] list = new int[]{5,14,2,70,28,145,16,51};
         LinearSearch linearSearch = new LinearSearch();
-        //linearSearch.searchByIterativeAlgorithm(list,10,0);
+        linearSearch.searchByIterativeAlgorithm(list,10,0);
         linearSearch.searchByRecursiveAlgorithm(list,70,0);
 
 
