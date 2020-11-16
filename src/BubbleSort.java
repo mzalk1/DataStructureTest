@@ -29,9 +29,27 @@ class BubbleSort {
     }
 
 
-    public int[] sortByRecursive(int[] list){
+    public int[] sortByRecursive(int[] list,int leftIx, int rightIx){
 
-        return null;
+        int [] tempList = list;
+
+        if (rightIx<list.length){
+
+            if (tempList[leftIx]>tempList[rightIx]){
+                int big = tempList[leftIx];
+                int min = tempList[rightIx];
+
+                tempList[rightIx]= big;
+                tempList[leftIx]=min;
+            }else {
+                sortByRecursive(list,leftIx+1,rightIx+1);
+            }
+
+            sortByRecursive(list,leftIx+1,rightIx+1);
+
+        }
+
+        return tempList;
     }
 
     public static void main(String[] args) {
@@ -39,6 +57,8 @@ class BubbleSort {
         BubbleSort bubbleSort = new BubbleSort();
 
         System.out.println(Arrays.toString(bubbleSort.sortByIterative(list)));
+        System.out.println(Arrays.toString(bubbleSort.sortByRecursive(list,0,1)));
+
 
     }
 }
