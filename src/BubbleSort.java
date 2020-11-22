@@ -8,39 +8,38 @@ class BubbleSort {
     //BigO --> O(N^2)
 
     public int[] sortByIterative(int[] list){
-        int [] tempList = list;
 
         for (int i =0; i<list.length-1; i++){
 
             for (int k =0; k<(list.length-1)-i; k++){
 
-                if (tempList[k]>tempList[k+1]){
-                    int big = tempList[k];
-                    int min = tempList[k+1];
-                    tempList[k+1] = big;
-                    tempList[k]=min;
+                if (list[k]>list[k+1]){
+                    int big = list[k];
+                    int min = list[k+1];
+                    list[k+1] = big;
+                    list[k]=min;
                 }else{
                     continue;
                 }
             }
             }
 
-        return tempList;
+        return list;
     }
 
 
     public int[] sortByRecursive(int[] list,int leftIx, int rightIx){
 
-        int [] tempList = list;
+
 
         if (rightIx<list.length){
 
-            if (tempList[leftIx]>tempList[rightIx]){
-                int big = tempList[leftIx];
-                int min = tempList[rightIx];
+            if (list[leftIx]>list[rightIx]){
+                int big = list[leftIx];
+                int min = list[rightIx];
 
-                tempList[rightIx]= big;
-                tempList[leftIx]=min;
+                list[rightIx]= big;
+                list[leftIx]=min;
             }else {
                 sortByRecursive(list,leftIx+1,rightIx+1);
             }
@@ -49,7 +48,7 @@ class BubbleSort {
 
         }
 
-        return tempList;
+        return list;
     }
 
     public static void main(String[] args) {

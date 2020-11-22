@@ -10,33 +10,31 @@ class SelectionSort {
     //BigO --> O(N^2)
 
 
-    public int[] searchByIterative(int[] list){
+    public int[] sortByIterative(int[] list){
 
-        int key;
-        int max;
-
-
-
+        int leftNum;
         for (int i =0; i<list.length-1; i++){
+            leftNum=i; //index of our leftNumber
             for (int j =i; j<list.length-1; j++){
 
                 if (list[i]<=list[j+1]){
-                    key = list[i];
-                    continue;
 
+                    continue;
             }else{
-                    max = list[i];
-                    key=list[j+1];
-                    list[i]=key;
-                    list[j+1]=max;
+
+                    swap(list,leftNum,j+1);
 
                 }
-
-
             }
         }
         return list;
+    }
 
+    public void swap(int[]list,int leftNum,int rightNum){
+
+        int temp = list[leftNum];
+        list[leftNum]=list[rightNum];
+        list[rightNum]=temp;
 
     }
 
@@ -46,6 +44,6 @@ class SelectionSort {
         int[] list ={2,1,4,3,8,15,3,0,7};
         SelectionSort selectionSort = new SelectionSort();
 
-        System.out.println(Arrays.toString(selectionSort.searchByIterative(list)));
+        System.out.println(Arrays.toString(selectionSort.sortByIterative(list)));
     }
 }
